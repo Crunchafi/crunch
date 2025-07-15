@@ -15,7 +15,7 @@ export default defineConfig({
   
   // Build settings
   build: {
-    outDir: 'dist',
+    outDir: 'docs',
     sourcemap: true,
     rollupOptions: {
       input: {
