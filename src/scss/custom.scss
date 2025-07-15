@@ -1,0 +1,261 @@
+//Pull in the Crunchafi design system variables
+@import "./crunch.scss";
+
+// Custom Bootstrap Variable Overrides
+
+// ===== COLOR SYSTEM =====
+$primary: $brand-action-primary-default;
+$secondary: $brand-action-secondary-default;
+$success: $brand-action-success-default;
+$info: $brand-action-info-default;
+$warning: $brand-action-warning-default;
+$danger: $brand-action-danger-default;
+$light: #f8f9fa;
+$dark: #212529;
+
+// ===== MODALS ===== //
+$modal-header-border-color: transparent;
+
+// ===== HEADINGS ===== //
+$heading-color: $brand-text-color-primary;
+
+// ===== TYPOGRAPHY =====
+$font-family-sans-serif: $brand-text-family-body;
+$font-family-monospace: 'JetBrains Mono', 'Fira Code', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.25rem;
+
+$font-weight-lighter: 300;
+$font-weight-light: 400;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.4;
+$line-height-lg: 1.8;
+
+// ===== SPACING =====
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    // 4px
+    2: $spacer * 0.5,
+    // 8px
+    3: $spacer,
+    // 16px
+    4: $spacer * 1.5,
+    // 24px
+    5: $spacer * 3,
+    // 48px
+    6: $spacer * 4,
+    // 64px
+);
+
+// ===== BORDERS =====
+$border-width: 1px;
+$border-radius: calc($brand-border-radius-control * 1px);
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+$border-radius-pill: 50rem;
+
+// ===== SHADOWS =====
+$box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+$box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+
+// ===== COMPONENT VARIABLES =====
+
+// Buttons
+$btn-padding-y: 0.4375rem;
+$btn-padding-x: 1rem;
+$btn-font-family: $font-family-sans-serif;
+$btn-font-size: $font-size-base;
+$btn-line-height: $line-height-base;
+$btn-font-weight: $brand-text-weight-regular;
+$btn-border-radius: $border-radius;
+$btn-box-shadow: $box-shadow;
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+$btn-border-radius-lg: $border-radius;
+
+// Alerts
+$alert-border-width: 0;
+
+// Cards
+$card-spacer-y: 1.5rem;
+$card-spacer-x: 1.5rem;
+$card-border-width: $border-width;
+$card-border-radius: calc($brand-border-radius-card * 1px);
+$card-box-shadow: $box-shadow;
+$card-cap-bg: transparent;
+
+// Navbar
+$navbar-padding-y: 1rem;
+$navbar-padding-x: 0;
+$navbar-nav-link-padding-x: 1rem;
+$navbar-brand-font-size: 1.25rem;
+$navbar-brand-font-weight: $font-weight-bold;
+
+// Forms
+$input-padding-y: 0.75rem;
+$input-padding-x: 1rem;
+$input-font-family: $font-family-sans-serif;
+$input-font-size: $font-size-base;
+$input-line-height: $line-height-base;
+$input-border-radius: $border-radius;
+$input-box-shadow: $box-shadow-inset;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
+
+// Modals
+$modal-content-border-radius: $border-radius-lg;
+$modal-content-box-shadow-xs: $box-shadow;
+$modal-content-box-shadow-sm-up: $box-shadow-lg;
+
+// Dropdowns
+$dropdown-border-radius: $border-radius;
+$dropdown-box-shadow: $box-shadow-lg;
+
+// Forms //
+$input-padding-y: 0.4375rem;
+
+// ===== FEATURE FLAGS =====
+$enable-rounded: true;
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-reduced-motion: true;
+$enable-smooth-scroll: true;
+$enable-grid-classes: true;
+$enable-container-classes: true;
+$enable-cssgrid: false;
+$enable-button-pointers: true;
+$enable-rfs: true;
+$enable-validation-icons: true;
+$enable-negative-margins: true;
+$enable-deprecation-messages: true;
+$enable-important-utilities: true;
+
+// ===== CUSTOM THEMES =====
+
+
+[data-theme="brand"],
+[data-theme="lease-accounting"],
+[data-theme="data-extraction"] {
+
+    .list-group-item{
+        --bs-list-group-active-color: var(--action-primary-text);
+        --bs-list-group-active-bg: var(--action-primary-default);
+        --bs-list-group-active-border-color: var(--action-primary-default);
+}
+    .alert-primary {
+        --bs-alert-bg: var(--surface-primary);
+    }
+
+    .navbar-brand {
+        --bs-navbar-brand-color: var(--action-primary-text);
+    }
+
+    .bg-primary {
+        background-color: var(--action-primary-default) !important;
+        color: var(--theme-action-primary-text) !important;
+    }
+
+    .bg-secondary {
+        color: var(--action-secondary-text) !important;
+    }
+
+    .btn-primary {
+        --bs-btn-color: var(--action-primary-text);
+        --bs-btn-hover-color: var(--action-primary-text);
+        --bs-btn-active-color: var(--action-primary-text);
+        --bs-btn-bg: var(--action-primary-default);
+        --bs-btn-border-color: var(--action-primary-default);
+        --bs-btn-hover-bg: var(--action-primary-hover);
+        --bs-btn-hover-color: var(--action-primary-text);
+        --bs-btn-hover-border-color: var(--action-primary-hover);
+        --bs-btn-active-bg: var(--action-primary-active);
+        --bs-btn-active-border-color: var(--action-primary-active);
+    }
+
+    .btn-secondary {
+        --bs-btn-color: var(--action-secondary-text);
+        --bs-btn-bg: var(--action-secondary-default);
+        --bs-btn-border-color: var(--action-secondary-default);
+        --bs-btn-hover-bg: var(--action-secondary-hover);
+        --bs-btn-hover-color: var(--action-secondary-text);
+        --bs-btn-hover-border-color: var(--action-secondary-hover);
+        --bs-btn-active-bg: var(--action-secondary-active);
+        --bs-btn-active-border-color: var(--action-secondary-active);
+    }
+
+    .btn-important {
+        --bs-btn-color: var(--action-important-text);
+        --bs-btn-bg: var(--action-important-default);
+        --bs-btn-border-color: var(--action-important-default);
+        --bs-btn-hover-bg: var(--action-important-hover);
+        --bs-btn-hover-color: var(--action-important-text);
+        --bs-btn-hover-border-color: var(--action-important-hover);
+        --bs-btn-active-bg: var(--action-important-active);
+        --bs-btn-active-border-color: var(--action-important-active);
+    }
+
+    .btn-success {
+        --bs-btn-color: var(--action-success-text);
+        --bs-btn-bg: var(--action-success-default);
+        --bs-btn-border-color: var(--action-success-default);
+        --bs-btn-hover-bg: var(--action-success-hover);
+        --bs-btn-hover-color: var(--action-success-text);
+        --bs-btn-hover-border-color: var(--action-success-hover);
+        --bs-btn-active-bg: var(--action-success-active);
+        --bs-btn-active-border-color: var(--action-success-active);
+    }
+
+    .btn-danger {
+        --bs-btn-color: var(--action-danger-text);
+        --bs-btn-bg: var(--action-danger-default);
+        --bs-btn-border-color: var(--action-danger-default);
+        --bs-btn-hover-bg: var(--action-danger-hover);
+        --bs-btn-hover-color: var(--action-danger-text);
+        --bs-btn-hover-border-color: var(--action-danger-hover);
+        --bs-btn-active-bg: var(--action-danger-active);
+        --bs-btn-active-border-color: var(--action-danger-active);
+    }
+
+    .btn-warning {
+        --bs-btn-color: var(--action-warning-text);
+        --bs-btn-bg: var(--action-warning-default);
+        --bs-btn-border-color: var(--action-warning-default);
+        --bs-btn-hover-bg: var(--action-warning-hover);
+        --bs-btn-hover-color: var(--action-warning-text);
+        --bs-btn-hover-border-color: var(--action-warning-hover);
+        --bs-btn-active-bg: var(--action-warning-active);
+        --bs-btn-active-border-color: var(--action-warning-active);
+    }
+
+    .btn-info {
+        --bs-btn-color: var(--action-info-text);
+        --bs-btn-bg: var(--action-info-default);
+        --bs-btn-border-color: var(--action-info-default);
+        --bs-btn-hover-bg: var(--action-info-hover);
+        --bs-btn-hover-color: var(--action-info-text);
+        --bs-btn-hover-border-color: var(--action-info-hover);
+        --bs-btn-active-bg: var(--action-info-active);
+        --bs-btn-active-border-color: var(--action-info-active);
+    }
+
+    .btn-floating {
+        --bs-btn-color: var(--action-floating-text);
+        --bs-btn-bg: var(--action-floating-default);
+        --bs-btn-border-color: var(--action-floating-default);
+        --bs-btn-hover-bg: var(--action-floating-hover);
+        --bs-btn-hover-color: var(--action-floating-text);
+        --bs-btn-hover-border-color: var(--action-floating-hover);
+        --bs-btn-active-bg: var(--action-floating-active);
+        --bs-btn-active-border-color: var(--action-floating-active);
+    }
+}
