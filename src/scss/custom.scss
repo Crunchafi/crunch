@@ -10,8 +10,8 @@ $success: $brand-action-success-default;
 $info: $brand-action-info-default;
 $warning: $brand-action-warning-default;
 $danger: $brand-action-danger-default;
-$light: #f8f9fa;
-$dark: #212529;
+$light: $crunch-color-ui-neutral-200;
+$dark: $crunch-color-ui-neutral-900;
 
 // ===== MODALS ===== //
 $modal-header-border-color: transparent;
@@ -142,16 +142,16 @@ $enable-important-utilities: true;
 
 // ===== CUSTOM THEMES =====
 
-
 [data-theme="brand"],
 [data-theme="lease-accounting"],
 [data-theme="data-extraction"] {
 
-    .list-group-item{
+    .list-group-item {
         --bs-list-group-active-color: var(--action-primary-text);
         --bs-list-group-active-bg: var(--action-primary-default);
         --bs-list-group-active-border-color: var(--action-primary-default);
-}
+    }
+
     .alert-primary {
         --bs-alert-bg: var(--surface-primary);
     }
@@ -257,5 +257,72 @@ $enable-important-utilities: true;
         --bs-btn-hover-border-color: var(--action-floating-hover);
         --bs-btn-active-bg: var(--action-floating-active);
         --bs-btn-active-border-color: var(--action-floating-active);
+    }
+
+    .btn-group {
+        height: var(--size-control-height-default)px;
+        border: $border-width solid var(--border-color-regular);
+        border-radius: $border-radius;
+
+        >.btn-check {
+
+            +.btn,
+            +.btn:not(:last-child):not(.dropdown-toggle),
+            +.btn.dropdown-toggle-split:first-child {
+
+                /* general */
+                border-radius: $border-radius-sm;
+                height: 30px;
+                margin: map-get($spacers, 1);
+                padding: map-get($spacers, 2) map-get($spacers, 3);
+                line-height: 0.9;
+
+                /* unselected */
+                color: var(--action-secondary-text);
+                background: var(--action-secondary-default);
+                border-color: var(--action-secondary-default);
+
+                &:hover {
+                    color: var(--action-secondary-hover-text);
+                    background: var(--action-secondary-hover);
+                    border-color: var(--action-secondary-hover);
+                }
+            }
+
+            &:checked {
+
+                +.btn,
+                +.btn:not(:last-child):not(.dropdown-toggle),
+                +.btn.dropdown-toggle-split:first-child {
+                    /* selected */
+                    color: var(--action-primary-text);
+                    background: var(--action-primary-default);
+                    border-color: var(--action-primary-default);
+
+                    &:hover {
+                        color: var(--action-primary-text);
+                        background: var(--action-primary-hover);
+                        border-color: var(--action-primary-hover);
+                    }
+                }
+            }
+        }
+
+        &.btn-group-lg {
+            height: 48px;
+            border-radius: $border-radius-lg;
+
+            >.btn-check {
+
+                +.btn,
+                +.btn:not(:last-child):not(.dropdown-toggle),
+                +.btn.dropdown-toggle-split:first-child {
+                    /* general */
+                    height: var(--size-control-height-default)px;
+                    margin: map-get($spacers, 1);
+                    border-radius: $border-radius;
+                }
+            }
+        }
     }
 }
