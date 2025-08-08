@@ -1,20 +1,20 @@
-name: Build and Deploy to GitHub Pages
+name: Build and Deploy (Vite /docs on main)
 
 on:
   push:
     branches:
-      - main  # Change if you want to deploy from another branch
-  workflow_dispatch:  # Allow manual deploy runs from GitHub Actions tab
+      - main
+  workflow_dispatch:
 
 permissions:
-  contents: write  # Needed to push to the gh-pages branch
+  contents: write
 
 jobs:
-  build-and-deploy:
+  build-and-commit:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Get the repo’s code
+      # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -22,19 +22,25 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'  # Match your project’s version
+          node-version: '22'
 
       # 3. Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4. Build the project
+      # 4. Cleanup old docs
+      - name: Remove old docs folder
+        run: rm -rf docs
+
+      # 5. Build project
       - name: Build project
         run: npm run build
 
-      # 5. Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs  # Change if your build folder is `build` instead of `dist`
+      # 6. Commit built files in /docs
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git commit -m "Update site [skip ci]" || echo "No changes to commit"
+          git push
