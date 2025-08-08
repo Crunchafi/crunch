@@ -169,6 +169,11 @@ $enable-important-utilities: true;
         color: var(--action-secondary-text) !important;
     }
 
+    .bg-dark-subtle {
+        background-color: $crunch-color-ui-neutral-300 !important;
+    }
+
+    // ===== Buttons =====
     .btn-primary {
         --bs-btn-color: var(--action-primary-text);
         --bs-btn-hover-color: var(--action-primary-text);
@@ -259,6 +264,7 @@ $enable-important-utilities: true;
         --bs-btn-active-border-color: var(--action-floating-active);
     }
 
+    // ===== Button Groups =====
     .btn-group {
         height: var(--size-control-height-default)px;
         border: $border-width solid var(--border-color-regular);
