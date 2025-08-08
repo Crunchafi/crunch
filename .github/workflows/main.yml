@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # Change if you want to deploy from another branch
+  workflow_dispatch:  # Allow manual deploy runs from GitHub Actions tab
 
 permissions:
   contents: write  # Needed to push to the gh-pages branch
